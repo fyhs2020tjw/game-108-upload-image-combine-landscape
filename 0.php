@@ -91,8 +91,8 @@ function userVerified () {
     }
 }
 
-if (isset($_POST["submit"]) && empty($_POST['h-captcha-response'])) userVerified();
-    ////////////echo "Please complete Captcha challenge.";
+if (isset($_POST["submit"]) && empty($_POST['h-captcha-response']))
+    echo "Please complete Captcha challenge.";
 
 if(isset($_POST["submit"]) && !empty($_POST['h-captcha-response'])) {
 
@@ -110,7 +110,7 @@ if(isset($_POST["submit"]) && !empty($_POST['h-captcha-response'])) {
     $responseData = json_decode($response);
     if($responseData->success) {
         // your success code goes here
-        //////////////////// userVerified();
+        userVerified();
     }
     else {
         echo "Human verification failed.";
